@@ -1,0 +1,12 @@
+<h1>Eliminar Paciente</h1>
+
+<p>¿Estás segura de que deseas eliminar al paciente:</p>
+
+<strong>{{ paciente.nombre }}</strong>
+
+<form method="post">
+    {% csrf_token %}
+    <br>
+    <button type="submit">🗑 Sí, eliminar</button>
+    <a href="{% url 'inicio' %}">Cancelar</a>
+</form>

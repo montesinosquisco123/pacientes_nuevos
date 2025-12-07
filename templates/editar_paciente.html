@@ -1,0 +1,10 @@
+<h1>Editar paciente</h1>
+
+<form method="post">
+  {% csrf_token %}
+  <input type="text" name="nombre" value="{{ paciente.nombre }}">
+  <input type="number" name="edad" value="{{ paciente.edad }}">
+  <input type="text" name="direccion" value="{{ paciente.direccion }}">
+  <input type="date" name="fecha_nacimiento" value="{{ paciente.fecha_nacimiento }}">
+  <button type="submit">Guardar</button>
+</form>

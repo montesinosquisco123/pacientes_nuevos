@@ -2,12 +2,14 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# ================= SEGURIDAD =================
-SECRET_KEY = "django-insecure-clave-temporal-pacientes"
-DEBUG = True
-ALLOWED_HOSTS = ["*"]
+SECRET_KEY = "cambia-esto-en-produccion"
 
-# ================= APLICACIONES =================
+DEBUG = False
+
+ALLOWED_HOSTS = [
+    "carolinamontes.pythonanywhere.com"
+]
+
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -18,8 +20,6 @@ INSTALLED_APPS = [
     "clinica",
 ]
 
-
-# ================= MIDDLEWARE =================
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -30,10 +30,8 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-# ================= URLS =================
 ROOT_URLCONF = "pacientes_nuevos.urls"
 
-# ================= TEMPLATES =================
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
@@ -50,10 +48,8 @@ TEMPLATES = [
     },
 ]
 
-# ================= WSGI =================
 WSGI_APPLICATION = "pacientes_nuevos.wsgi.application"
 
-# ================= BASE DE DATOS =================
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
@@ -61,17 +57,12 @@ DATABASES = {
     }
 }
 
-# ================= PASSWORDS =================
-AUTH_PASSWORD_VALIDATORS = [
-    {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
-    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
-    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"},
-    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
-]
+LANGUAGE_CODE = "es-cl"
+TIME_ZONE = "America/Santiago"
+USE_I18N = True
+USE_TZ = True
 
-# ================= ESTÁTICOS =================
 STATIC_URL = "/static/"
-STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_ROOT = BASE_DIR / "static"
 
-# ================= DEFAULT =================
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"

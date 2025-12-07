@@ -1,11 +1,12 @@
-<h2>Pacientes</h2>
-
-<a href="/nuevo/">Agregar paciente</a>
+<h1>Pacientes</h1>
+<a href="/nuevo/">➕ Nuevo paciente</a>
 
 <ul>
-{% for paciente in pacientes %}
-    <li>{{ paciente.nombre }} - {{ paciente.rut }}</li>
-{% empty %}
-    <li>No hay pacientes registrados.</li>
+{% for p in pacientes %}
+  <li>
+    {{ p.nombre }} - {{ p.edad }} años
+    <a href="/editar/{{ p.id }}/">✏️</a>
+    <a href="/eliminar/{{ p.id }}/">🗑️</a>
+  </li>
 {% endfor %}
 </ul>
