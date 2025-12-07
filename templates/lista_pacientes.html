@@ -1,0 +1,11 @@
+<h2>Pacientes</h2>
+
+<a href="/nuevo/">Agregar paciente</a>
+
+<ul>
+{% for paciente in pacientes %}
+    <li>{{ paciente.nombre }} - {{ paciente.rut }}</li>
+{% empty %}
+    <li>No hay pacientes registrados.</li>
+{% endfor %}
+</ul>
